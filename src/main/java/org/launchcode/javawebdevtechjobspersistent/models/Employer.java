@@ -6,7 +6,7 @@ import javax.validation.constraints.NotBlank;
 @Entity
 public class Employer extends AbstractEntity {
 
-    @NotBlank(message = "Location is required")
+    @NotBlank(message = "Location is required.")
     private String location;
 
     public Employer(String location) {
