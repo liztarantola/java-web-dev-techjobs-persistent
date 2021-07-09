@@ -18,12 +18,12 @@ public class SkillController {
     @Autowired
     private SkillRepository skillRepository;
 
-    @GetMapping
-    public String displayAllSkills(Model model) {
-        model.addAttribute("title", "All Skills");
-        model.addAttribute("skill", skillRepository.findAll());
-        return "skills/index";
-    }
+//    @GetMapping
+//    public String displayAllSkills(Model model) {
+//        model.addAttribute("title", "All Skills");
+//        model.addAttribute("skill", skillRepository.findAll());
+//        return "skills/index";
+//    }
 
     @GetMapping("add")
     public String displayAddSkillForm(Model model) {
@@ -36,13 +36,13 @@ public class SkillController {
                                          Errors errors, Model model) {
 
         if (errors.hasErrors()) {
-            model.addAttribute("title", "Add Skill");
-            model.addAttribute(new Skill());
+//            model.addAttribute("title", "Add Skill");
+//            model.addAttribute(new Skill());
             return "skills/add";
         }
 
         skillRepository.save(newSkill);
-        return "redirect:";
+        return "redirect:../add";
     }
 
     @GetMapping("view/{skillId}")
